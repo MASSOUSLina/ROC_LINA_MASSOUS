@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ExtendedSerialPort;
+using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,8 @@ namespace RobotInterface
     /// </summary>
     public partial class MainWindow : Window
     {
+        ReliableSerialPort serialPort1;
+
         void envoyer()
         {
             textBoxReception.Text = textBoxReception.Text + "reçu: " + textBoxEmission.Text + "\n";
@@ -29,6 +33,8 @@ namespace RobotInterface
         public MainWindow()
         {
             InitializeComponent();
+            serialPort1 = new ReliableSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
+            serialPort1.Open();
         }
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
@@ -44,5 +50,6 @@ namespace RobotInterface
                 envoyer();
             }
         }
+       
     }
 }
