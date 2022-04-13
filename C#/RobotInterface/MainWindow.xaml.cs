@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading ;
+
+
 namespace RobotInterface
 {
     /// <summary>
@@ -23,13 +25,14 @@ namespace RobotInterface
     public partial class MainWindow : Window
     {
         ReliableSerialPort serialPort1;
-        DispatcherTimer timerAffichage ;
+        DispatcherTimer timerAffichage;
+        Robot robot;
         void envoyer()
         {
             serialPort1.WriteLine(textBoxEmission.Text);
             //textBoxReception.Text = textBoxReception.Text + "reçu: " + textBoxEmission.Text + "\n";
             textBoxEmission.Clear();
-        }        
+        }
 
         public MainWindow()
         {
@@ -41,23 +44,25 @@ namespace RobotInterface
             timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
-            Robot robot=new Robot();
+            robot = new Robot();
+
         }
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            if(robot.receivedText != "")
+            while (robot.byteListReceived.Count>0)
             {
-                textBoxReception.Text += robot.receivedText;
-                robot.receivedText = "";
+                textBoxReception.Text += "0x"+robot.byteListReceived.Dequeue().ToString("X4")+" "; //x2 2 valeur apres 0x , X4 4 valeur apres
             }
         }
 
         private void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
             //throw new NotImplementedException();
-            robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
-
+            foreach(byte c in e.Data)
+            {
+                robot.byteListReceived.Enqueue(c);
+            }
         }
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
@@ -79,5 +84,15 @@ namespace RobotInterface
 
             textBoxReception.Clear();
         }
+
+        private void ButtonTest_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] byteList = new byte[20];
+            for (int i = 0; i < 20; i++)
+            {
+                byteList[i] = (byte)(2 * i);
+            }
+            serialPort1.Write(byteList, 0, byteList.Length);
+        }            
     }
 }

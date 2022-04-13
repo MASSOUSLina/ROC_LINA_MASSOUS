@@ -27,6 +27,7 @@
         </GroupBox>
         <Button x:Name="buttonEnvoyer" Content="Envoyer" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Stretch" Width="100" Background="#FFDC87CC" Click="buttonEnvoyer_Click"/>
         <Button x:Name="buttonClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Stretch" Width="100" Margin="150,0,0,0" Background="#FFE49DE8" Click="ButtonClear_Click"/>
+        <Button x:Name="buttonTest"  Content="Test"   VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Margin="356,10,361,0" Grid.Row="2" Click="ButtonTest_Click"/>
 
 
     </Grid>

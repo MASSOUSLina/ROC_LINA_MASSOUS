@@ -8,6 +8,7 @@
 #include "ADC.h"
 #include "Robot.h"
 #include "main.h"
+#include "UART.h"
 
 int main(void) {
     /***************************************************************************************************/
@@ -281,6 +282,10 @@ void SetNextRobotStateInAutomaticMode() {
     if (nextStateRobot != stateRobot - 1) {
         stateRobot = nextStateRobot;
     }
+    
+    
+    SendMessageDirect ( ( unsigned char *) "Bonjour" , 7 ) ;
+    __delay32(40000000);
 }
 
 
