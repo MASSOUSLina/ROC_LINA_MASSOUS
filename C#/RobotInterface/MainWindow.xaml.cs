@@ -52,7 +52,7 @@ namespace RobotInterface
         {
             while (robot.byteListReceived.Count>0)
             {
-                textBoxReception.Text += "0x"+robot.byteListReceived.Dequeue().ToString("X4")+" "; //x2 2 valeur apres 0x , X4 4 valeur apres
+                textBoxReception.Text += "0x"+robot.byteListReceived.Dequeue().ToString("X2")+" "; //x2 2 valeur apres 0x , X4 4 valeur apres
             }
         }
 

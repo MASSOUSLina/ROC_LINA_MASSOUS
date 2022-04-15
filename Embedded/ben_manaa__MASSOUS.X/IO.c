@@ -54,7 +54,7 @@ void InitIO()
      _TRISC7 = 0 ;
 
     //********** Configuration des entrées : _TRISxx = 1 ********************************   
-     _U1RXR = 0b00000 ; //Remappe l a RP . . . s u r l ?é e n t r e Rx1
+     _U1RXR = 24 ; //Remappe l a RP . . . s u r l ?é e n t r e Rx1
      _RP36R = 0b00001 ; //Remappe l a s o r t i e Tx1 v e r s RP . . .
 
 }
