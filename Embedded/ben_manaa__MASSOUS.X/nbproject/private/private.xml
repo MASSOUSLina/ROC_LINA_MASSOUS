@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/main.c</file>
-            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/PWM.h</file>
-            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/PWM.c</file>
-            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/UART.h</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/CB_TX1.h</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/CB_RX1.c</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/CB_RX1.h</file>
             <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/UART.c</file>
-            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/IO.c</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/CB_TX1.c</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/UART.h</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/nbproject/Makefile-impl.mk</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/nbproject/Makefile-default.mk</file>
+            <file>file:/C:/GitHub/ROC_LINA_MASSOUS/Embedded/ben_manaa__MASSOUS.X/ADC.c</file>
         </group>
     </open-files>
 </project-private>
